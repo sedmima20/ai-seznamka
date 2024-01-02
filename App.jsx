@@ -1,8 +1,9 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import HomePage from "/pages/HomePage.jsx"
-import AdFormPage from "/pages/AdFormPage.jsx"
-import NotFoundPage from "/pages/NotFoundPage.jsx";
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'
+import HomePage from '/pages/HomePage.jsx'
+import AdFormPage from '/pages/AdFormPage.jsx'
+import PrivacyPolicyPage from '/pages/PrivacyPolicyPage.jsx'
+import NotFoundPage from '/pages/NotFoundPage.jsx'
 import logo from '/images/logo.png'
 
 export default function App() {
@@ -22,12 +23,16 @@ export default function App() {
                     <li>
                         <Link to="/vlozit-inzerat">Vložení inzerátu</Link>
                     </li>
+                    <li>
+                        <Link to="/zasady-zpracovani-osobnich-udaju">Zásady zpracování osobních údajů</Link>
+                    </li>
                 </ul>
             </nav>
             <main>
                 <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/vlozit-inzerat" element={<AdFormPage />} />
+                    <Route path="/zasady-zpracovani-osobnich-udaju" element={<PrivacyPolicyPage />} />
                     <Route path="*" element={<NotFoundPage />} />
                 </Routes>
             </main>
