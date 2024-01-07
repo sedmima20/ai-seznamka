@@ -144,15 +144,53 @@ export default function AdFormPage() {
         })
             .then(response => {
                 const statusCode = response.status;
-                return response.json().then(data => {
-                    return { statusCode, data };
-                });
+                return response.text().then(text => {
+                    try {
+                        const data = JSON.parse(text);
+                        return { statusCode, data };
+                    } catch (error) {
+                        return { statusCode, data: undefined };
+                    }
+                })
             })
             .then(result => {
                 callback(result);
             })
-            .catch(error => {
-                console.error('Error fetching data:', error); // smazat
+            .catch(() => {
+                callback(undefined);
+            });
+    }
+
+    function insertDatingAd(token, adText, contactInfo, callback) {
+        const formData = new URLSearchParams();
+        formData.append('text', adText);
+        if (contactInfo !== "") {
+            formData.append('contact_info', contactInfo);
+        }
+
+        fetch("https://api.aiseznamka.cz/?action=insert_dating_ad", {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: formData
+        })
+            .then(response => {
+                const statusCode = response.status;
+                return response.text().then(text => {
+                    try {
+                        const data = JSON.parse(text);
+                        return { statusCode, data };
+                    } catch (error) {
+                        return { statusCode, data: undefined };
+                    }
+                })
+            })
+            .then(result => {
+                callback(result);
+            })
+            .catch(() => {
                 callback(undefined);
             });
     }
@@ -176,8 +214,116 @@ export default function AdFormPage() {
     }
 
     function handleAdSubmit() {
+        insertDatingAd(googleToken, ad.text, ad.contactInfo, (result) => {
+            if (!result) {
+                setMessageBanner(prevMessageBanner => {
+                    return {
+                        ...prevMessageBanner,
+                        text: "Při odesílání požadavku na náš server došlo k neznámé chybě.",
+                        isError: true
+                    }
+                })
+                window.scrollTo(0, 0)
+                return;
+            }
 
-        // Posunout uživatele nahoru
+            if (result.statusCode === 201) {
+                setAd(prevAd => {
+                    return {
+                        ...prevAd,
+                        isNew: false
+                    }
+                })
+                setMessageBanner(prevMessageBanner => {
+                    return {
+                        ...prevMessageBanner,
+                        text: "Inzerát byl úspěšně odeslán! Do 24 hodin od jeho odeslání ho můžete libovolně upravovat. Poté se tato možnost zamkne a inzerát bude zaktivován. Děkujeme, že jste se rozhodli využít naši službu AI seznamka Zuzana! ✨",
+                        isError: false
+                    }
+                })
+                window.scrollTo(0, 0)
+            } else if (result.statusCode === 204) {
+                setMessageBanner(prevMessageBanner => {
+                    return {
+                        ...prevMessageBanner,
+                        text: "Inzerát byl úspěšně upraven!",
+                        isError: false
+                    }
+                })
+                window.scrollTo(0, 0)
+            } else if (result.statusCode === 403) {
+                if (result.data.error_message === "Ad too short") {
+                    setMessageBanner(prevMessageBanner => {
+                        return {
+                            ...prevMessageBanner,
+                            text: "Inzerát je moc krátký, jeho minimální délka je 300 znaků.",
+                            isError: true
+                        }
+                    })
+                } else if (result.data.error_message === "Ad too long") {
+                    setMessageBanner(prevMessageBanner => {
+                        return {
+                            ...prevMessageBanner,
+                            text: "Inzerát je moc dlouhý, jeho maximální délka je 1300 znaků.",
+                            isError: true
+                        }
+                    })
+                } else if (result.data.error_message === "Contact info too long") {
+                    setMessageBanner(prevMessageBanner => {
+                        return {
+                            ...prevMessageBanner,
+                            text: "Text s kontaktními údaji je moc dlouhý, jeho maximální délka je 80 znaků.",
+                            isError: true
+                        }
+                    })
+                } else {
+                    setMessageBanner(prevMessageBanner => {
+                        return {
+                            ...prevMessageBanner,
+                            text: "Inzerát je starší než 24 hodin a už nemůže být upraven.",
+                            isError: true
+                        }
+                    })
+                }
+                window.scrollTo(0, 0)
+            } else if (result.statusCode === 400) {
+                setMessageBanner(prevMessageBanner => {
+                    return {
+                        ...prevMessageBanner,
+                        text: "Došlo k neznámé chybě, text inzerátu nebyl odeslán na server.",
+                        isError: true
+                    }
+                })
+                window.scrollTo(0, 0)
+            } else if (result.statusCode === 401) {
+                setMessageBanner(prevMessageBanner => {
+                    return {
+                        ...prevMessageBanner,
+                        text: "Došlo k neznámé chybě při přihlašování Vaším Google účtem.",
+                        isError: true
+                    }
+                })
+                window.scrollTo(0, 0)
+            } else if (result.statusCode === 500) {
+                setMessageBanner(prevMessageBanner => {
+                    return {
+                        ...prevMessageBanner,
+                        text: "Došlo k neznámé chybě na straně serveru.",
+                        isError: true
+                    }
+                })
+                window.scrollTo(0, 0)
+            } else {
+                setMessageBanner(prevMessageBanner => {
+                    return {
+                        ...prevMessageBanner,
+                        text: "Došlo k neznámé chybě.",
+                        isError: true
+                    }
+                })
+                window.scrollTo(0, 0)
+            }
+        })
     }
 
     return (
