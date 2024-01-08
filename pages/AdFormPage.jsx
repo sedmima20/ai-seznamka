@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { GoogleLogin } from '@react-oauth/google'
 
 export default function AdFormPage() {
@@ -228,20 +228,8 @@ export default function AdFormPage() {
             }
 
             if (result.statusCode === 201) {
-                setAd(prevAd => {
-                    return {
-                        ...prevAd,
-                        isNew: false
-                    }
-                })
-                setMessageBanner(prevMessageBanner => {
-                    return {
-                        ...prevMessageBanner,
-                        text: "Inzerát byl úspěšně odeslán! Do 24 hodin od jeho odeslání ho můžete libovolně upravovat. Poté se tato možnost zamkne a inzerát bude zaktivován. Děkujeme, že jste se rozhodli využít naši službu AI seznamka Zuzana! ✨",
-                        isError: false
-                    }
-                })
-                window.scrollTo(0, 0)
+                const navigate = useNavigate()
+                navigate('/inzerat-odeslan')
             } else if (result.statusCode === 204) {
                 setMessageBanner(prevMessageBanner => {
                     return {

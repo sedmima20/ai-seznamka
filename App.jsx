@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'
 import { GoogleOAuthProvider } from '@react-oauth/google'
 import HomePage from '/pages/HomePage.jsx'
 import AdFormPage from '/pages/AdFormPage.jsx'
+import AdInsertedPage from '/pages/AdInsertedPage.jsx'
 import PrivacyPolicyPage from '/pages/PrivacyPolicyPage.jsx'
 import NotFoundPage from '/pages/NotFoundPage.jsx'
 import logo from '/images/logo.png'
@@ -34,6 +35,7 @@ export default function App() {
                     <Routes>
                         <Route path="/" element={<HomePage />} />
                         <Route path="/vlozit-inzerat" element={<AdFormPage />} />
+                        <Route path="/inzerat-odeslan" element={<AdInsertedPage />} />
                         <Route path="/zasady-zpracovani-osobnich-udaju" element={<PrivacyPolicyPage />} />
                         <Route path="*" element={<NotFoundPage />} />
                     </Routes>

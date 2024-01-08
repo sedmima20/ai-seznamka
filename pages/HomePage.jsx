@@ -2,10 +2,10 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
 export default function HomePage() {
-    const navigate = useNavigate();
+    const navigate = useNavigate()
 
     function handleClick() {
-        navigate('/vlozit-inzerat');
+        navigate('/vlozit-inzerat')
     }
 
     return (
