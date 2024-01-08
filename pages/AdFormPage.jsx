@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import { GoogleLogin } from '@react-oauth/google'
 
 export default function AdFormPage() {
+    const navigate = useNavigate()
+
     const [messageBanner, setMessageBanner] = React.useState({
         text: "",
         isError: false
@@ -228,7 +230,6 @@ export default function AdFormPage() {
             }
 
             if (result.statusCode === 201) {
-                const navigate = useNavigate()
                 navigate('/inzerat-odeslan')
             } else if (result.statusCode === 204) {
                 setMessageBanner(prevMessageBanner => {
