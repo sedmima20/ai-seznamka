@@ -370,7 +370,7 @@ export default function AdFormPage() {
                     maxLength="1300"
                     disabled={!ad.isEditable || googleToken === ""}
                 />
-                {ad.isEditable && googleToken !== "" && <p>{ad.text.length} / 1300</p>}
+                {ad.isEditable && googleToken !== "" && ad.text.length > 900 && <p>{ad.text.length} / 1300</p>}
             </section>
             <section>
                 <h2><b>Krok 3:</b> Přidejte kontaktní údaje</h2>
@@ -391,7 +391,7 @@ export default function AdFormPage() {
                     maxLength="80"
                     disabled={!ad.isEditable || googleToken === ""}
                 />
-                {ad.isEditable && googleToken !== "" && <p>{ad.contactInfo.length} / 80</p>}
+                {ad.isEditable && googleToken !== "" && ad.contactInfo.length > 50 && <p>{ad.contactInfo.length} / 80</p>}
             </section>
             <section>
                 <h2><b>Krok 4:</b> Zkontrolujte a odešlete inzerát</h2>
