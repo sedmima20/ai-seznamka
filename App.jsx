@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'
+import { HashRouter as Router, Route, Routes, Link } from 'react-router-dom'
 import { GoogleOAuthProvider } from '@react-oauth/google'
 import HomePage from '/pages/HomePage.jsx'
 import AdFormPage from '/pages/AdFormPage.jsx'
@@ -11,7 +11,7 @@ import logo from '/images/logo.png'
 export default function App() {
     return (
         <GoogleOAuthProvider clientId="299519458500-vk9tfbjdulaiv79cvnkulhksv1e3men2.apps.googleusercontent.com">
-            <Router>
+            <Router basename={window.location.hostname === 'localhost' ? '/' : '/ai-seznamka/'}>
                 <header>
                     <Link to="/">
                         <img src={logo} alt="logo" className="logo"/>
