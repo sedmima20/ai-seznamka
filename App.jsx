@@ -11,7 +11,7 @@ import logo from '/images/logo.png'
 export default function App() {
     return (
         <GoogleOAuthProvider clientId="299519458500-vk9tfbjdulaiv79cvnkulhksv1e3men2.apps.googleusercontent.com">
-            <Router basename={window.location.hostname === 'localhost' ? '/' : '/ai-seznamka/'}>
+            <Router>
                 <header>
                     <Link to="/">
                         <img src={logo} alt="logo" className="logo"/>
