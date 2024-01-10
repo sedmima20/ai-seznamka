@@ -17,7 +17,7 @@ export default function HomePage() {
                 <button onClick={handleClick}>Chci se seznámit</button>
             </section>
             <section>
-                <h2>Jak to funguje?</h2>
+                <h2>Jak to celé funguje?</h2>
                 <ol>
                     <li><b>Vložíte svůj seznamovací inzerát přes formulář</b><br/>Napíšete informace o sobě a o tom, jakého partnera, kamaráda nebo jiného člověka hledáte. Čím více informací uvedete, tím lépe a přesněji bude Zuzana vědět, kdo jste a koho hledáte, a bude Vám hledat co nejvhodnější protějšek.<br/><strong>Více informací sice znamená méně matchů, ale nalezení lidé budou mnohem více odpovídat tomu, co hledáte. Méně informací sice znamená více matchů, ale nalezení lidé nemusí přesně odpovídat tomu, co byste chtěli najít, takže tuto možnost moc nedoporučujeme.</strong></li>
                     <li><b>Zuzana následně začne porovnávat inzeráty a vyhodnocovat, s kým se k sobě hodíte a s kým ne</b><br/>Vyzkouší různé kombinace uživatelů a pro každou otestuje kompatibilitu. Zjistí, zda se shodují Vaše požadavky s tím, jaká druhá osoba je a co hledá, a naopak.</li>
