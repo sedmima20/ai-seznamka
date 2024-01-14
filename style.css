@@ -137,31 +137,27 @@ section:hover {
     padding: 0;
 }
 
-.card {
+.card-container > div {
     font-size: 14px;
-    background: #dbb1e3; /* Card background */
+    background: #f6dcfc; /* Card background */
     border-radius: 7px; /* Card border radius */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Card shadow */
     padding: 15px; /* Card padding */
     transition: box-shadow 0.3s ease-in-out;
 }
 
-.card:nth-child(odd) {
-    background: #dbb1e3; /* Light background for odd cards */
-}
-
-.card:nth-child(even) {
-    background: #b594bd; /* Slightly darker background for even cards */
-}
-
-.card:hover {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+.card-container > div:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 /* Optional: If you want to ensure that there are only two rows, you can set a specific height for the cards */
-.card {
+.card-container > div {
     height: auto; /* Adjust the height as needed, or use 'auto' for content-based height */
     overflow: hidden; /* Ensures the content does not overflow the card */
+}
+
+.card-container > div > h3::before {
+    content: "✨ ";
 }
 
 /* Responsive adjustments if needed */
