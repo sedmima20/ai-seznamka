@@ -1,0 +1,289 @@
+/* HomePage.css */
+/* Additional styles for App component */
+
+/* Header styles */
+header {
+    background-color: #8743a9;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex; /* Use flexbox to align items */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    border-radius: 7px;
+}
+
+header a {
+    text-decoration: none;
+    color: #dbb1e3;
+    font-family: 'Arial', 'sans-serif';
+    font-size: 32px;
+    display: flex; /* Use flexbox to align the logo and text */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally within the <a> element */
+}
+
+.logo {
+    height: 190px; /* Adjust the size of your logo */
+    margin-bottom: 10px; /* Add space between the logo and the text */
+}
+
+/* Navigation menu styles */
+nav {
+    background: #6a2f86;
+    padding: 20px 20px 10px 20px;
+    border-radius: 7px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #1E88E5;
+}
+
+nav ul li:last-child a {
+    color: #c2c2c2; /* Replace #desiredColor with the color you want for the last item */
+}
+
+nav ul li:last-child a:hover {
+    color: #1E88E5; /* Hover color for the last item */
+}
+
+/* Footer styles */
+footer {
+    background-color: #dbb1e3;
+    padding: 20px;
+    border-radius: 7px;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+}
+
+footer a {
+    color: #2196F3;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #1E88E5;
+}
+
+/* Responsive styles for navigation */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+
+    nav ul li:last-child {
+        margin-bottom: 0;
+    }
+
+    textarea {
+        padding: 8px; /* Slightly smaller padding on smaller screens */
+    }
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #4c2661; /* Updated background color */
+    padding: 20px;
+    margin: 0;
+}
+
+section {
+    background: #dbb1e3;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 7px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+section:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates three columns */
+    grid-gap: 20px; /* Space between cards */
+    padding: 0;
+}
+
+.card {
+    font-size: 14px;
+    background: #dbb1e3; /* Card background */
+    border-radius: 7px; /* Card border radius */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Card shadow */
+    padding: 15px; /* Card padding */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:nth-child(odd) {
+    background: #dbb1e3; /* Light background for odd cards */
+}
+
+.card:nth-child(even) {
+    background: #b594bd; /* Slightly darker background for even cards */
+}
+
+.card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Optional: If you want to ensure that there are only two rows, you can set a specific height for the cards */
+.card {
+    height: auto; /* Adjust the height as needed, or use 'auto' for content-based height */
+    overflow: hidden; /* Ensures the content does not overflow the card */
+}
+
+/* Responsive adjustments if needed */
+@media (max-width: 992px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: 1fr; /* One column for even smaller screens */
+    }
+}
+
+h1, h2 {
+    color: #444;
+}
+
+p {
+    margin-bottom: 16px;
+}
+
+button {
+    background-color: #6a2f86;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, box-shadow 0.2s ease;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.4);
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+button:hover {
+    background-color: #4c2661;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+button:active::before {
+    width: 300px;
+    height: 300px;
+    opacity: 1;
+    transition: width 0.5s ease, height 0.5s ease, opacity 0s ease 0.5s;
+}
+
+ol, ul {
+    margin-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+strong {
+    color: #6d3688;
+    font-size: 12px;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    section {
+        margin: 10px 0;
+    }
+
+    button {
+        width: 100%;
+        box-sizing: border-box; /* Ensures padding doesn't add to the width */
+    }
+}
+
+/* Styles for textarea */
+textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 7px;
+    border: 1px solid #ccc;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    margin-top: 10px;
+    box-sizing: border-box; /* Ensures padding doesn't add to the width */
+    resize: vertical; /* Allows vertical resizing, you can use 'both' if you want horizontal resizing as well */
+}
+
+/* Styles for error message box */
+.error-message-box {
+    background-color: #f8d7da; /* Light red background */
+    color: #721c24; /* Darker red text color for contrast */
+    padding: 10px;
+    border-radius: 7px;
+    margin: 10px 0;
+    border: 1px solid #f5c6cb;
+}
+
+/* Styles for OK message box */
+.ok-message-box {
+    background-color: #d4edda; /* Light green background */
+    color: #155724; /* Darker green text color for contrast */
+    padding: 10px;
+    border-radius: 7px;
+    margin: 10px 0;
+    border: 1px solid #c3e6cb;
+}
