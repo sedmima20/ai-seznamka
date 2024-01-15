@@ -7,24 +7,24 @@ header {
     padding: 10px 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     display: flex; /* Use flexbox to align items */
-    justify-content: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
     border-radius: 7px;
 }
 
-header a {
-    text-decoration: none;
-    color: #dbb1e3;
-    font-family: 'Arial', 'sans-serif';
-    font-size: 32px;
-    display: flex; /* Use flexbox to align the logo and text */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally within the <a> element */
+header h1 {
+    font-size: 40px;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff; /* Sets the text color to white for both h1 and h2 */
+    margin: 0; /* Removes default margins */
 }
 
-.logo {
-    height: 190px; /* Adjust the size of your logo */
-    margin-bottom: 10px; /* Add space between the logo and the text */
+header h2 {
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff; /* Sets the text color to white for both h1 and h2 */
+    margin: 0; /* Removes default margins */
 }
 
 /* Navigation menu styles */
@@ -32,6 +32,7 @@ nav {
     background: #6a2f86;
     padding: 20px 20px 10px 20px;
     border-radius: 7px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 nav ul {
@@ -51,7 +52,7 @@ nav ul li:last-child {
 
 nav a {
     text-decoration: none;
-    color: #fff;
+    color: #ffffff;
     font-weight: 500;
     transition: color 0.3s ease;
 }
@@ -74,8 +75,8 @@ footer {
     padding: 20px;
     border-radius: 7px;
     text-align: center;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-    font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    font-size: 12px;
 }
 
 footer a {
@@ -117,12 +118,43 @@ body {
     margin: 0;
 }
 
+.header {
+    width: 100%;
+}
+
+.round-image {
+    width: 256px;
+    height: 256px;
+    border-radius: 50%;
+    border: 5px solid #4c2661;
+}
+
+.arrow {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content-container {
+    display: flex;
+    align-items: center; /* This will vertically center the items */
+    justify-content: center; /* This will horizontally center the items */
+}
+
+.text-container {
+    max-width: 600px; /* Adjust the max-width as needed */
+    margin-left: 50px; /* Add some space between the image and the text */
+    text-align: center; /* Center the text inside the text container */
+}
+
 section {
     background: #dbb1e3;
     margin: 20px 0;
     padding: 20px;
     border-radius: 7px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     transition: box-shadow 0.3s ease-in-out;
 }
 
@@ -130,14 +162,14 @@ section:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.card-container {
+.benefits-card-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Creates three columns */
     grid-gap: 20px; /* Space between cards */
     padding: 0;
 }
 
-.card-container > div {
+.benefits-card-container > div {
     font-size: 14px;
     background: #f6dcfc; /* Card background */
     border-radius: 7px; /* Card border radius */
@@ -146,39 +178,144 @@ section:hover {
     transition: box-shadow 0.3s ease-in-out;
 }
 
-.card-container > div:hover {
+.benefits-card-container > div:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 /* Optional: If you want to ensure that there are only two rows, you can set a specific height for the cards */
-.card-container > div {
+.benefits-card-container > div {
     height: auto; /* Adjust the height as needed, or use 'auto' for content-based height */
     overflow: hidden; /* Ensures the content does not overflow the card */
 }
 
-.card-container > div > h3::before {
+.benefits-card-container > div > h3::before {
     content: "✨ ";
 }
 
 /* Responsive adjustments if needed */
 @media (max-width: 992px) {
-    .card-container {
+    .benefits-card-container {
         grid-template-columns: repeat(2, 1fr); /* Two columns for smaller screens */
     }
 }
 
 @media (max-width: 768px) {
-    .card-container {
+    .benefits-card-container {
         grid-template-columns: 1fr; /* One column for even smaller screens */
     }
 }
 
-h1, h2 {
+.function-card-container {
+    display: grid;
+    grid-gap: 20px; /* Space between cards */
+    padding: 0;
+}
+
+.function-card-container > div {
+    font-size: 14px;
+    background: #f6dcfc; /* Card background */
+    border-radius: 7px; /* Card border radius */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Card shadow */
+    padding: 15px; /* Card padding */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.function-card-container > div:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Optional: If you want to ensure that there are only two rows, you can set a specific height for the cards */
+.function-card-container > div {
+    height: auto; /* Adjust the height as needed, or use 'auto' for content-based height */
+    overflow: hidden; /* Ensures the content does not overflow the card */
+}
+
+.function-card-container > div > h3::before {
+    content: "✅ ";
+}
+
+.advice-card-container {
+    display: grid;
+    grid-gap: 20px; /* Space between cards */
+    padding: 0;
+}
+
+.advice-card-container > div {
+    font-size: 14px;
+    background: #f6dcfc; /* Card background */
+    border-radius: 7px; /* Card border radius */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Card shadow */
+    padding: 15px; /* Card padding */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.advice-card-container > div:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Optional: If you want to ensure that there are only two rows, you can set a specific height for the cards */
+.advice-card-container > div {
+    height: auto; /* Adjust the height as needed, or use 'auto' for content-based height */
+    overflow: hidden; /* Ensures the content does not overflow the card */
+}
+
+.advice-card-container > div > h3::before {
+    content: "👉 ";
+}
+
+h1 {
+    color: #444;
+}
+
+h2 {
+    margin-bottom: 10px;
+    color: #444;
+}
+
+h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
     color: #444;
 }
 
 p {
     margin-bottom: 16px;
+}
+
+.price {
+    font-size: 50px;
+    color: #4c2661;
+    font-weight: bold;
+    text-align: center;
+}
+
+.price-desc {
+    font-size: 20px;
+    color: #4c2661;
+    text-align: center;
+}
+
+.price-card {
+    max-width: 500px;
+    margin: 10px auto;
+    font-size: 14px;
+    background: #f6dcfc; /* Card background */
+    border-radius: 7px; /* Card border radius */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Card shadow */
+    padding: 15px; /* Card padding */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.price-card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.price-reason {
+    text-align: center;
+}
+
+.price-reason::before {
+    content: "✅ ";
 }
 
 button {
@@ -282,4 +419,9 @@ textarea {
     border-radius: 7px;
     margin: 10px 0;
     border: 1px solid #c3e6cb;
+}
+
+.ending {
+    display: grid;
+    justify-items: center;
 }

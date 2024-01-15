@@ -6,17 +6,15 @@ import AdFormPage from '/pages/AdFormPage.jsx'
 import AdInsertedPage from '/pages/AdInsertedPage.jsx'
 import PrivacyPolicyPage from '/pages/PrivacyPolicyPage.jsx'
 import NotFoundPage from '/pages/NotFoundPage.jsx'
-import logo from '/images/logo.png'
+import header from '/images/header.png'
 
 export default function App() {
     return (
         <GoogleOAuthProvider clientId="299519458500-vk9tfbjdulaiv79cvnkulhksv1e3men2.apps.googleusercontent.com">
             <Router>
                 <header>
-                    <Link to="/">
-                        <img src={logo} alt="logo" className="logo"/>
-                        AI seznamka Zuzana
-                    </Link>
+                    <h1>AI seznamka Zuzana</h1>
+                    <h2>umělá inteligence, skutečné spojení</h2>
                 </header>
                 <nav>
                     <ul>
