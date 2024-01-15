@@ -6,7 +6,6 @@ import AdFormPage from '/pages/AdFormPage.jsx'
 import AdInsertedPage from '/pages/AdInsertedPage.jsx'
 import PrivacyPolicyPage from '/pages/PrivacyPolicyPage.jsx'
 import NotFoundPage from '/pages/NotFoundPage.jsx'
-import header from '/images/header.png'
 
 export default function App() {
     return (
