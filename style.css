@@ -13,18 +13,24 @@ header {
     border-radius: 7px;
 }
 
-header h1 {
+header p:first-of-type {
     font-size: 40px;
     font-family: 'Roboto', sans-serif;
-    color: #ffffff; /* Sets the text color to white for both h1 and h2 */
-    margin: 0; /* Removes default margins */
+    color: #ffffff;
+    margin: 0;
+    text-align: center;
 }
 
-header h2 {
+    header p:last-of-type {
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
-    color: #ffffff; /* Sets the text color to white for both h1 and h2 */
-    margin: 0; /* Removes default margins */
+    color: #ffffff;
+    margin: 0;
+    text-align: center;
+}
+
+header a {
+    text-decoration: none;
 }
 
 /* Navigation menu styles */
@@ -129,18 +135,17 @@ body {
     border: 5px solid #4c2661;
 }
 
-.arrow {
-    display: block;
-    width: 50px;
-    height: 50px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .content-container {
     display: flex;
-    align-items: center; /* This will vertically center the items */
-    justify-content: center; /* This will horizontally center the items */
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+    }
 }
 
 .text-container {
@@ -232,6 +237,14 @@ section:hover {
 
 .function-card-container > div > h3::before {
     content: "✅ ";
+}
+
+.function-card-container > img {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .advice-card-container {

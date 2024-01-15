@@ -12,12 +12,14 @@ export default function App() {
         <GoogleOAuthProvider clientId="299519458500-vk9tfbjdulaiv79cvnkulhksv1e3men2.apps.googleusercontent.com">
             <Router>
                 <header>
-                    <h1>AI seznamka Zuzana</h1>
-                    <h2>umělá inteligence, skutečné spojení</h2>
+                    <Link to="/">
+                    <p>AI seznamka Zuzana</p>
+                    <p>umělá inteligence, skutečné spojení</p>
+                    </Link>
                 </header>
                 <nav>
                     <ul>
-                        <li>
+                    <li>
                             <Link to="/">Domů</Link>
                         </li>
                         <li>
