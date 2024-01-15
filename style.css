@@ -10,7 +10,7 @@ header {
     flex-direction: column; /* Stack items vertically */
     justify-content: center; /* Center items vertically */
     align-items: center; /* Center items horizontally */
-    border-radius: 7px;
+    border-radius: 7px 7px 0 0;
 }
 
 header p:first-of-type {
@@ -37,7 +37,7 @@ header a {
 nav {
     background: #6a2f86;
     padding: 20px 20px 10px 20px;
-    border-radius: 7px;
+    border-radius: 0 0 7px 7px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -308,27 +308,37 @@ p {
     text-align: center;
 }
 
-.price-card {
+.price-card-container > div {
     max-width: 500px;
-    margin: 10px auto;
+    margin: 20px auto;
     font-size: 14px;
-    background: #f6dcfc; /* Card background */
-    border-radius: 7px; /* Card border radius */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Card shadow */
-    padding: 15px; /* Card padding */
+    background: #f6dcfc;
+    border-radius: 7px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 15px;
     transition: box-shadow 0.3s ease-in-out;
 }
 
-.price-card:hover {
+.price-card-container > div:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
-.price-reason {
+.price-reason-container > ul {
+    padding-inline-start: 0;
+    margin: 0;
+    list-style-type: none;
     text-align: center;
 }
 
-.price-reason::before {
+.price-reason-container > ul > li::before {
     content: "✅ ";
+}
+
+section:last-of-type{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 button {
@@ -337,6 +347,7 @@ button {
     border: none;
     padding: 10px 20px;
     margin-top: 10px;
+    margin-bottom: 20px;
     border-radius: 7px;
     cursor: pointer;
     font-size: 16px;
@@ -383,7 +394,7 @@ li {
 
 strong {
     color: #6d3688;
-    font-size: 12px;
+    font-size: 13px;
 }
 
 @media (max-width: 768px) {
@@ -432,9 +443,4 @@ textarea {
     border-radius: 7px;
     margin: 10px 0;
     border: 1px solid #c3e6cb;
-}
-
-.ending {
-    display: grid;
-    justify-items: center;
 }

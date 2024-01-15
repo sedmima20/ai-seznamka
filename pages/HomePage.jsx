@@ -79,7 +79,7 @@ export default function HomePage() {
                             Zuzana ale nikdy neukáže plné znění inzerátu druhého.
                             <br/>
                             V tomto emailu Vám Zuzana vysvětlí Vaše dvě možnosti: buď Vám pošle kontakt na druhou osobu za
-                            několik dní, nebo můžete zaplatit a dostat kontakt ihned.
+                            pět dní, nebo můžete zaplatit a dostat kontakt ihned.
                             <br/>
                             <strong>
                                 Tip: buďte trpěliví. Hledání vhodného protějšku může nějakou chvíli trvat, takže email nemusí
@@ -97,7 +97,7 @@ export default function HomePage() {
                             Vždy půjde o email a pokud druhý zadal i jiný kontakt, tak i tento kontakt.
                             <br/>
                             <strong>
-                                Hodně štěstí při komunikaci!
+                                Hodně štěstí při komunikaci s touto osobou!
                             </strong>
                         </p>
                     </div>
@@ -192,7 +192,7 @@ export default function HomePage() {
             <section>
                 <h2>Jak je to s placením?</h2>
                 <p>
-                    Když Zuzana nalezne shodu, informuje Vás o tom emailem a pošle Vám kontakt za několik dní. Máte
+                    Když Zuzana nalezne shodu, informuje Vás o tom emailem a pošle Vám kontakt za 5 dní. Máte
                     možnost i získat kontakt bez čekání platbou na odkazu v emailu.
                     Samozřejmě bychom rádi posílali kontakt hned, bohužel využívání AI nás stojí nemalé peníze, a proto
                     jsme
@@ -209,39 +209,37 @@ export default function HomePage() {
                         platba vyplatí méně.
                     </strong>
                 </p>
-                <div className="price-card">
-                    <div className="price">
-                        ZDARMA
+                <div className="price-card-container">
+                    <div>
+                        <div className="price">
+                            ZDARMA
+                        </div>
+                        <div className="price-desc">
+                           Cena za zaslání kontaktu za 5 dní
+                        </div>
                     </div>
-                    <br/>
-                    <div className="price-desc">
-                       Cena za zaslání kontaktu za několik dní
+                    <div>
+                        <div className="price">
+                            29 Kč
+                        </div>
+                        <div className="price-desc">
+                            Cena za zaslání kontaktu za ihned
+                        </div>
                     </div>
                 </div>
-                <br/>
-                <div className="price-card">
-                    <div className="price">
-                        29 Kč
-                    </div>
-                    <br/>
-                    <div className="price-desc">
-                        Cena za zaslání kontaktu za ihned
-                    </div>
-                </div>
-                <br/>
-                <div className="price-reason">Kontaktujete druhého včas, dokud má ještě
-                    inzerát a zájem
-                </div>
-                <div className="price-reason">Předběhnete další potenciální zájemce z naší seznamky
-                </div>
-                <div className="price-reason">Dáte druhému najevo svůj opravdový zájem
+                <div className="price-reason-container">
+                    <ul>
+                        <li>Kontaktujte druhého včas, dokud má ještě inzerát a zájem</li>
+                        <li>Předběhněte další potenciální zájemce z naší seznamky</li>
+                        <li>Dejte druhému najevo, že o něj máte opravdový zájem</li>
+                    </ul>
                 </div>
             </section>
             <section>
                 <h2>Doporučení pro Váš inzerát</h2>
                 <div className="advice-card-container">
                     <div>
-                        <h3>Kdo jste a koho hledáte</h3>
+                    <h3>Kdo jste a koho hledáte</h3>
                         <p>
                             Začít můžete tím, že se představíte (jméno, věk, bydliště, zaměstnání/studium atd).
                             Dále můžete napsat něco víc o sobě (vzhled, osobnost, vlastnosti, zájmy, záliby).
@@ -269,8 +267,7 @@ export default function HomePage() {
                         <h3>Píšete to pro AI, ne pro lidi</h3>
                         <p>
                             Proto například můžete vynechat fráze směřující k lidskému čtenáři, jako třeba „určitě
-                            napiš“.
-                            Také nevadí větší délka inzerátu.
+                            napiš“ a podobně. Také nevadí větší délka inzerátu. Umělá inteligence jej vezme v úvahu celý.
                         </p>
                     </div>
                     <div>
@@ -285,14 +282,11 @@ export default function HomePage() {
                             informacím věnovali nejvíce prostoru.
                         </p>
                     </div>
-                    <p>Zobrazit další doporučení</p>
                 </div>
             </section>
             <section>
-                <div className="ending">
-                    <h2>Zaujalo Vás to?</h2>
-                    <button onClick={handleClick}>Chci si vytvořit a podat inzerát</button>
-                </div>
+                <h2>Zaujalo Vás to?</h2>
+                <button onClick={handleClick}>Chci si vytvořit a podat inzerát</button>
             </section>
         </>
     )
