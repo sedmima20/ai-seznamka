@@ -157,7 +157,7 @@ export default function HomePage() {
             </section>
             <section>
                 <h2>Jak je to s placením?</h2>
-                Když Zuzana nalezne velkou shodu, informuje Vás o tom emailem a pošle Vám kontakt za několik dní. Máte
+                Když Zuzana nalezne shodu, informuje Vás o tom emailem a pošle Vám kontakt za několik dní. Máte
                 možnost i získat kontakt bez čekání platbou na odkazu v emailu.
                 Samozřejmě bychom rádi posílali kontakt hned, bohužel využívání AI nás stojí nemalé peníze, a proto jsme
                 se rozhodli, že pozdržení zaslání kontaktu bude určitým znevýhodněním
