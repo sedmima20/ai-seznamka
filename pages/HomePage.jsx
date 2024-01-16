@@ -1,7 +1,7 @@
 import React from 'react'
-import {Link, useNavigate} from 'react-router-dom'
-import logo from "../images/logo.png";
-import arrow from "../images/arrow.png";
+import { useNavigate } from 'react-router-dom'
+import zuzana from '../images/zuzana.png'
+import arrow from '../images/arrow.png'
 
 export default function HomePage() {
     const navigate = useNavigate()
@@ -15,7 +15,7 @@ export default function HomePage() {
             <section>
                 <h1>Zuzana se představuje</h1>
                 <div className="content-container">
-                    <img src={logo} alt="Zuzana" className="round-image"/>
+                    <img src={zuzana} alt="Zuzana" className="round-image"/>
                     <div className="text-container">
                         <p>
                             Už Vás nebaví prohledávání seznamovacích inzerátů na seznamkách, které často nikam nevede?
@@ -67,7 +67,7 @@ export default function HomePage() {
                             Vyzkouší se různé kombinace uživatelů a pro každou se otestuje kompatibilita. Zjistí, zda
                             se shodují Vaše požadavky s tím, jaká druhá osoba je a co hledá, a naopak.
                         </p>
-                </div>
+                    </div>
                     <img src={arrow} alt="arrow down"/>
                     <div>
                         <h3>Hned jak Zuzana nalezne velkou shodu, pošle Vám email</h3>
@@ -227,19 +227,17 @@ export default function HomePage() {
                         </div>
                     </div>
                 </div>
-                <div className="price-reason-container">
-                    <ul>
-                        <li>Kontaktujte druhého včas, dokud má ještě inzerát a zájem</li>
-                        <li>Předběhněte další potenciální zájemce z naší seznamky</li>
-                        <li>Dejte druhému najevo, že o něj máte opravdový zájem</li>
-                    </ul>
-                </div>
+                <ul className="price-reason-container">
+                    <li>Kontaktujte druhého včas, dokud má ještě inzerát a zájem</li>
+                    <li>Předběhněte další potenciální zájemce z naší seznamky</li>
+                    <li>Dejte druhému najevo, že o něj máte opravdový zájem</li>
+                </ul>
             </section>
             <section>
                 <h2>Doporučení pro Váš inzerát</h2>
                 <div className="advice-card-container">
                     <div>
-                    <h3>Kdo jste a koho hledáte</h3>
+                        <h3>Kdo jste a koho hledáte</h3>
                         <p>
                             Začít můžete tím, že se představíte (jméno, věk, bydliště, zaměstnání/studium atd).
                             Dále můžete napsat něco víc o sobě (vzhled, osobnost, vlastnosti, zájmy, záliby).

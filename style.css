@@ -323,14 +323,14 @@ p {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
-.price-reason-container > ul {
+.price-reason-container {
     padding-inline-start: 0;
     margin: 0;
     list-style-type: none;
     text-align: center;
 }
 
-.price-reason-container > ul > li::before {
+.price-reason-container > li::before {
     content: "✅ ";
 }
 

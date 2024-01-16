@@ -13,13 +13,13 @@ export default function App() {
             <Router>
                 <header>
                     <Link to="/">
-                    <p>AI seznamka Zuzana</p>
-                    <p>umělá inteligence, skutečné spojení</p>
+                        <p>AI seznamka Zuzana</p>
+                        <p>umělá inteligence, skutečné spojení</p>
                     </Link>
                 </header>
                 <nav>
                     <ul>
-                    <li>
+                        <li>
                             <Link to="/">Domů</Link>
                         </li>
                         <li>
