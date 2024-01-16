@@ -282,7 +282,7 @@ export default function HomePage() {
                     </div>
                 </div>
             </section>
-            <section>
+            <section className="call-to-action">
                 <h2>Zaujalo Vás to?</h2>
                 <button onClick={handleClick}>Chci si vytvořit a podat inzerát</button>
             </section>
